@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "wind-farm-service"
+version = "0.1.0"
+description = ""
+authors = ["Joeffison Silvério de Andrade <joeffison@gmail.com>"]
+readme = "README.md"
+packages = [{include = "wind_farm_service", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
