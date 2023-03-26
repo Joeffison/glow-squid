@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  wind_farm_service:
+    build: ./wind_farm_service
+    ports:
+      - "8080:8000"
