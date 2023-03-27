@@ -20,3 +20,16 @@
    ```
 
 3. Check the results on your browser at http://localhost:3000/
+
+
+### Importing initial data
+
+1. Start the relevant containers (skip this step if you just run `docker compose up -d`):
+   ```
+   docker compose up -d wind-farm-service
+   ```
+
+2. Import the Projects data
+   ```
+   docker compose exec -it wind-farm-service python src/manage.py import_projects raw-data/Project_raw_table.csv
+   ```

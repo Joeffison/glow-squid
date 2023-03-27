@@ -27,6 +27,7 @@ services:
       - MAIN_DB_PASSWORD=dev-pwd-to-be-replaced-by-secrets!
     volumes:
       - ./wind_farm_service/src:/app/src
+      - ./raw-data:/app/raw-data
 
   wind-farm-sqldb:
     image: postgres:13
