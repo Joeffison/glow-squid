@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-c-tu5cnqa6x1eswv-60vmcow10q6hi1lpa+-xgp(%qzs#xtosr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['wind-farm-service', '127.0.0.1', 'localhost']
 
 
 # Application definition

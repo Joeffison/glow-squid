@@ -1,14 +1,26 @@
 version: "3.9"
 
 services:
-  wind_farm_service:
+  wind-farm-webapp:
+    build:
+      context: ./wind_farm_webapp
+      args:
+        REACT_APP_WIND_FARM_API: wind-farm-service
+    ports:
+      - "3000:80"
+    depends_on:
+      - wind-farm-service
+    volumes:
+      - ./wind_farm_webapp/src:/app/src
+
+  wind-farm-service:
     build: ./wind_farm_service
     ports:
       - "8080:8000"
     depends_on:
-      - wind_farm_sqldb
+      - wind-farm-sqldb
     environment:
-      - MAIN_DB_HOST=wind_farm_sqldb
+      - MAIN_DB_HOST=wind-farm-sqldb
       - MAIN_DB_PORT=5432
       - MAIN_DB_DATABASE=wind_farm
       - MAIN_DB_USER=wind-farm-dev
@@ -16,7 +28,7 @@ services:
     volumes:
       - ./wind_farm_service/src:/app/src
 
-  wind_farm_sqldb:
+  wind-farm-sqldb:
     image: postgres:13
     ports:
       - "5432:5432"

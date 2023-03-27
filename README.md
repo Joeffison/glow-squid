@@ -9,14 +9,14 @@
 - [Docker](https://docs.docker.com/engine/install/)
 
 ### Steps
-1. Start the containers on docker buy running the command below:
+1. Start the containers on docker by running the command below:
     ```
     docker compose up -d
     ```
 
 2. Apply changes to the database:
    ```
-   docker compose exec wind_farm_service python src/manage.py migrate
+   docker compose exec wind-farm-service python src/manage.py migrate
    ```
 
-3. Check the results on your browser at http://localhost:8080/projects
+3. Check the results on your browser at http://localhost:3000/
