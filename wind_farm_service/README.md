@@ -14,3 +14,11 @@ and columns to the csv format during the demo.
 
 3. I used django as it was required in the project but I would otherwise have used Flask or FastPI
 because I have not worked with Django since at least 5 or 6 years.
+
+4. The management commands could easily extend a class with all the methods to import the models
+and have a mapping ("csv column" to "model fields") to deserialize the input.
+
+5. Add more human-readable errors specially to the import command
+
+6. Add tests (I would have otherwise created them during development time but it was not possible
+in such a short time to deliver )

@@ -33,3 +33,8 @@
    ```
    docker compose exec -it wind-farm-service python src/manage.py import_projects raw-data/Project_raw_table.csv
    ```
+
+3. Import the WTGs data
+   ```
+   docker compose exec -it wind-farm-service python src/manage.py import_wtgs raw-data/WTG_raw_table.csv
+   ```
