@@ -1,26 +1,20 @@
-import {useEffect, useState} from "react";
-
 import './App.css';
-import {ProjectsApi} from "./api";
-import ProjectsTable from "./components/ProjectsTable";
+import {Link, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 
 function App() {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    ProjectsApi
-      .getAll()
-      .then(({ data }) => setProjects(data))
-  }, []);
-
   return (
     <div className="App">
       <header className="App-header">
         <h1>
-          Wind Farm
+          <Link to="/projects">Projects</Link>
         </h1>
       </header>
-      <ProjectsTable projects={projects}></ProjectsTable>
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects/" element={<Projects />} />
+       </Routes>
     </div>
   );
 }
