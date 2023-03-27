@@ -5,3 +5,28 @@ services:
     build: ./wind_farm_service
     ports:
       - "8080:8000"
+    depends_on:
+      - wind_farm_sqldb
+    environment:
+      - MAIN_DB_HOST=wind_farm_sqldb
+      - MAIN_DB_PORT=5432
+      - MAIN_DB_DATABASE=wind_farm
+      - MAIN_DB_USER=wind-farm-dev
+      - MAIN_DB_PASSWORD=dev-pwd-to-be-replaced-by-secrets!
+    volumes:
+      - ./wind_farm_service/src:/app/src
+
+  wind_farm_sqldb:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=wind_farm
+      - POSTGRES_USER=wind-farm-dev
+      - POSTGRES_PASSWORD=dev-pwd-to-be-replaced-by-secrets!
+    volumes:
+      - postgres_data:/var/lib/postgres/data/
+
+volumes:
+  postgres_data:
+    driver: local

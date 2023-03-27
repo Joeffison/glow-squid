@@ -14,4 +14,9 @@
     docker compose up -d
     ```
 
-2. Check the results on your browser at http://localhost:8080/
+2. Apply changes to the database:
+   ```
+   docker compose exec wind_farm_service python src/manage.py migrate
+   ```
+
+3. Check the results on your browser at http://localhost:8080/projects
