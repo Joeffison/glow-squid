@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 
 import './App.css';
 import {ProjectsApi} from "./api";
+import ProjectsTable from "./components/ProjectsTable";
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -15,17 +16,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        <h1>
           Wind Farm
-        </p>
+        </h1>
       </header>
-      <ul>
-        {projects.map((project) => (
-          <li key={project.id}>
-            {project.name}
-          </li>
-        ))}
-      </ul>
+      <ProjectsTable projects={projects}></ProjectsTable>
     </div>
   );
 }

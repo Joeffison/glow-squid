@@ -10,8 +10,6 @@ services:
       - "3000:80"
     depends_on:
       - wind-farm-service
-    volumes:
-      - ./wind_farm_webapp/src:/app/src
 
   wind-farm-service:
     build: ./wind_farm_service
