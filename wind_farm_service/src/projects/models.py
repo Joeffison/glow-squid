@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 
 
@@ -11,6 +13,24 @@ class Project(models.Model):
     group_id = models.CharField(max_length=10)
     status_id = models.CharField(max_length=20)
     company_id = models.IntegerField(null=True)
+
+    @property
+    def wtg_numbers(self):
+        wtg_numbers = [wtg.wtg_number for wtg in self.wtg_set.all()]
+        return ', '.join(wtg_numbers)
+
+    @property
+    def total_kw(self):
+        wtg_kw = [wtg.kw for wtg in self.wtg_set.all()]
+        return sum(wtg_kw)
+
+    @property
+    def months_acquired(self):
+        if self.acquisition_date:
+            months = (datetime.today().date() - self.acquisition_date).days // 30
+            return months
+
+        return None
 
     def __str__(self):
         return self.name

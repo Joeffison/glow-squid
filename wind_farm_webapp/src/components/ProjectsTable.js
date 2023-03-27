@@ -19,6 +19,9 @@ export default function ProjectsTable({ projects }) {
     {field: 'group_id', label: 'Group id'},
     {field: 'status_id', label: 'Status id'},
     {field: 'company_id', label: 'Company id'},
+    {field: 'wtg_numbers', label: 'WTG Numbers'},
+    {field: 'total_kw', label: 'Total kW'},
+    {field: 'months_acquired', label: 'Months Acquired'},
   ];
 
   return (
