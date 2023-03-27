@@ -10,6 +10,7 @@ packages = [{include = "wind_farm_service", from = "src"}]
 python = "^3.11.2"
 django = "^4.1.7"
 psycopg2-binary = "^2.9.5"
+djangorestframework = "^3.14.0"
 
 
 [tool.poetry.group.dev.dependencies]
