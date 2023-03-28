@@ -19,6 +19,7 @@ pytest = "^7.2.2"
 pytest-watch = "^4.2.0"
 pytest-dotenv = "^0.5.2"
 python-dotenv = {version = "^1.0.0", extras = ["cli"]}
+django-cors-headers = "^3.14.0"
 
 [build-system]
 requires = ["poetry-core"]
