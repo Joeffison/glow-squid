@@ -18,7 +18,10 @@ because I have not worked with Django since at least 5 or 6 years.
 4. The management commands could easily extend a class with all the methods to import the models
 and have a mapping ("csv column" to "model fields") to deserialize the input.
 
-5. Add more human-readable errors specially to the import command
+5. Typically, the import commands would not import the IDs to avoid problems with the
+auto generated IDs mechanism. For the sake of the demo, I opted to keep it.
 
-6. Add tests (I would have otherwise created them during development time but it was not possible
+6. Add more human-readable errors specially to the import command
+
+7. Add tests (I would have otherwise created them during development time but it was not possible
 in such a short time to deliver )
